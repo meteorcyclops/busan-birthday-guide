@@ -2,226 +2,260 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>釜山旅行手冊 2.0 | Busan Trip Guide</title>
-  <meta name="description" content="釜山 5 天 4 夜旅行手冊，包含海景、文青咖啡、晚餐、Google Maps 地點與每日動線。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>釜山旅行手冊 | 可愛生日版 Busan Trip Guide</title>
+  <meta name="description" content="釜山 5 天 4 夜旅行手冊，可愛生日氛圍、手機友善閱讀、含每日動線、餐廳、咖啡店與 Google Maps。" />
   <style>
     :root {
-      --bg: #f7f3ee;
-      --paper: rgba(255,255,255,.86);
-      --paper-strong: #fffdfb;
-      --ink: #18212b;
-      --muted: #667085;
-      --accent: #e07a5f;
-      --accent-2: #3d405b;
-      --accent-3: #81b29a;
-      --line: rgba(61,64,91,.12);
-      --shadow: 0 18px 50px rgba(24,33,43,.08);
-      --radius: 24px;
+      --bg: #fff8f7;
+      --paper: rgba(255,255,255,.92);
+      --paper-2: #fffdfd;
+      --ink: #2c2432;
+      --muted: #7a6c79;
+      --pink: #f49cb6;
+      --peach: #ffc8a2;
+      --cream: #fff1d6;
+      --mint: #bde7da;
+      --lav: #d9d1ff;
+      --line: rgba(115,90,110,.12);
+      --shadow: 0 14px 40px rgba(184,105,132,.12);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 18px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
       color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      line-height: 1.72;
       background:
-        radial-gradient(circle at top left, rgba(224,122,95,.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(129,178,154,.20), transparent 26%),
-        linear-gradient(180deg, #f8f4ef 0%, #f4efe8 100%);
-      line-height: 1.75;
+        radial-gradient(circle at 12% 8%, rgba(244,156,182,.25), transparent 18%),
+        radial-gradient(circle at 88% 12%, rgba(217,209,255,.28), transparent 20%),
+        radial-gradient(circle at 80% 78%, rgba(189,231,218,.25), transparent 22%),
+        linear-gradient(180deg, #fff9f8 0%, #fff6f3 100%);
     }
-    a { color: #0b6b61; text-decoration: none; }
+    a { color: #116c64; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
     .hero {
-      padding: 72px 0 36px;
+      padding: 28px 0 18px;
+    }
+    .hero-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,246,248,.9));
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 22px 18px 20px;
       position: relative;
       overflow: hidden;
     }
-    .hero-card {
-      background: linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,250,244,.86));
-      border: 1px solid rgba(255,255,255,.65);
-      box-shadow: var(--shadow);
-      border-radius: 32px;
-      padding: 36px;
-      backdrop-filter: blur(12px);
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(2px);
+      opacity: .65;
+    }
+    .hero-card::before {
+      width: 170px; height: 170px;
+      background: rgba(244,156,182,.18);
+      top: -50px; right: -30px;
+    }
+    .hero-card::after {
+      width: 140px; height: 140px;
+      background: rgba(189,231,218,.22);
+      bottom: -50px; left: -25px;
     }
     .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(224,122,95,.12);
-      color: #9f3f2a;
-      font-size: 13px;
-      font-weight: 700;
+      background: rgba(244,156,182,.16);
+      color: #a94767;
+      font-size: 12px;
+      font-weight: 800;
       letter-spacing: .04em;
-      text-transform: uppercase;
     }
     h1 {
-      font-size: clamp(34px, 6vw, 62px);
-      line-height: 1.08;
-      margin: 16px 0 12px;
+      margin: 14px 0 8px;
+      font-size: clamp(30px, 8vw, 54px);
+      line-height: 1.07;
       letter-spacing: -.03em;
     }
     .hero p {
       margin: 0;
       color: var(--muted);
-      font-size: 17px;
-      max-width: 760px;
+      font-size: 15px;
+      max-width: 740px;
     }
     .chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 8px;
+      margin-top: 16px;
     }
     .chip {
-      padding: 9px 14px;
+      padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(61,64,91,.08);
-      background: rgba(255,255,255,.75);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent-2);
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 700;
+      color: #594a57;
     }
 
-    .quick {
+    .summary {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      margin: 28px 0 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 16px;
     }
-    .quick .box {
+    .summary-card {
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 16px;
       box-shadow: var(--shadow);
+      padding: 14px;
     }
-    .box .label {
-      font-size: 12px;
+    .summary-card .k {
+      font-size: 11px;
+      font-weight: 800;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: .05em;
-      font-weight: 700;
     }
-    .box .value {
-      margin-top: 6px;
-      font-size: 16px;
-      font-weight: 700;
+    .summary-card .v {
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: 800;
     }
 
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 25;
+      background: rgba(255,248,247,.86);
       backdrop-filter: blur(12px);
-      background: rgba(247,243,238,.72);
-      border-bottom: 1px solid rgba(61,64,91,.08);
+      border-bottom: 1px solid rgba(115,90,110,.08);
     }
     .nav-inner {
       display: flex;
-      gap: 12px;
-      overflow: auto;
-      padding: 12px 0;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .nav-inner::-webkit-scrollbar { display: none; }
     .nav a {
       white-space: nowrap;
-      padding: 10px 14px;
+      padding: 10px 13px;
       border-radius: 999px;
-      background: rgba(255,255,255,.8);
+      background: rgba(255,255,255,.92);
       border: 1px solid var(--line);
-      color: var(--accent-2);
-      font-size: 14px;
-      font-weight: 600;
+      color: #5d4d59;
+      font-size: 13px;
+      font-weight: 800;
     }
 
-    main { padding: 28px 0 80px; }
-    section.card {
+    main { padding: 16px 0 70px; }
+    .card {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
-      padding: 28px;
-      margin-bottom: 22px;
-      backdrop-filter: blur(10px);
+      padding: 18px;
+      margin-bottom: 16px;
     }
     h2 {
-      font-size: 28px;
-      margin: 0 0 8px;
+      margin: 0 0 6px;
+      font-size: 25px;
       letter-spacing: -.02em;
     }
     .lead {
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 14px;
     }
-    .day-grid {
+    .layout {
       display: grid;
-      grid-template-columns: 1.25fr .95fr;
-      gap: 20px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
     .panel {
-      background: var(--paper-strong);
+      background: var(--paper-2);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 18px;
+      border-radius: var(--radius-lg);
+      padding: 15px;
     }
     .panel h3 {
       margin: 0 0 10px;
-      font-size: 17px;
-      color: var(--accent-2);
+      font-size: 16px;
+      color: #5f4a5d;
     }
     .flow {
-      padding-left: 18px;
       margin: 0;
+      padding-left: 18px;
     }
     .flow li { margin: 8px 0; }
     .place-list {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
     .place {
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
+      border-radius: var(--radius-md);
       background: #fff;
+      padding: 13px;
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,241,214,.9);
+      color: #9a5c13;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
     }
     .place strong {
       display: block;
       font-size: 15px;
       margin-bottom: 2px;
     }
-    .place span {
+    .place .sub {
       display: block;
       color: var(--muted);
       font-size: 13px;
-      margin-bottom: 6px;
-    }
-    .tag {
-      display: inline-block;
-      margin-bottom: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      color: #9f3f2a;
-      background: rgba(224,122,95,.12);
-      padding: 6px 10px;
-      border-radius: 999px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+      margin-bottom: 7px;
     }
     .footer-note {
       text-align: center;
       color: var(--muted);
-      font-size: 14px;
-      margin-top: 24px;
+      font-size: 13px;
+      margin-top: 18px;
+      padding-bottom: 20px;
     }
-    @media (max-width: 900px) {
-      .day-grid { grid-template-columns: 1fr; }
-      .hero-card { padding: 28px 22px; }
-      section.card { padding: 22px; }
+
+    @media (min-width: 760px) {
+      .wrap { padding: 0 20px; }
+      .hero { padding: 54px 0 24px; }
+      .hero-card { padding: 34px; }
+      .hero p { font-size: 17px; }
+      .summary { grid-template-columns: repeat(4, 1fr); }
+      .layout { grid-template-columns: 1.12fr .95fr; gap: 16px; }
+      .card { padding: 26px; margin-bottom: 20px; }
+      h2 { font-size: 30px; }
+      .lead { font-size: 16px; }
+      .panel { padding: 18px; }
     }
   </style>
 </head>
@@ -229,34 +263,34 @@
   <header class="hero">
     <div class="wrap">
       <div class="hero-card">
-        <span class="eyebrow">Busan Trip Guide 2.0</span>
+        <span class="eyebrow">🎀 Busan Trip Guide · Cute Birthday Edition</span>
         <h1>釜山旅行手冊</h1>
-        <p>給一趟有海風、咖啡香、好吃晚餐與舒服節奏的釜山旅行。這是一份可以直接照著走的 5 天 4 夜行程，含每日動線、餐廳、咖啡店與 Google Maps 地點。</p>
+        <p>一份適合雙人共用的釜山旅行手冊，帶一點可愛的生日氛圍，保留舒服節奏、海景、文青咖啡和好吃晚餐。手機上也能直接滑著看，不用一直放大縮小。</p>
         <div class="chips">
           <span class="chip">2026/05/15 - 2026/05/19</span>
+          <span class="chip">5天4夜</span>
           <span class="chip">文青散步</span>
           <span class="chip">海景咖啡</span>
           <span class="chip">5/18 重點日晚餐</span>
           <span class="chip">釜山航空 Busan Air</span>
         </div>
-      </div>
-
-      <div class="quick">
-        <div class="box"><div class="label">航班建議</div><div class="value">TPE → PUS 5/15 - 5/19</div></div>
-        <div class="box"><div class="label">住宿建議</div><div class="value">西面 Seomyeon</div></div>
-        <div class="box"><div class="label">最佳風格</div><div class="value">舒服、慢節奏、好拍</div></div>
-        <div class="box"><div class="label">重點日晚餐區域</div><div class="value">廣安里 Gwangalli</div></div>
+        <div class="summary">
+          <div class="summary-card"><div class="k">航班</div><div class="v">TPE → PUS</div></div>
+          <div class="summary-card"><div class="k">住宿建議</div><div class="v">西面 Seomyeon</div></div>
+          <div class="summary-card"><div class="k">旅行氣氛</div><div class="v">舒服、好拍、慢節奏</div></div>
+          <div class="summary-card"><div class="k">重點日晚餐</div><div class="v">廣安里 Gwangalli</div></div>
+        </div>
       </div>
     </div>
   </header>
 
   <div class="nav">
     <div class="wrap nav-inner">
-      <a href="#day1">Day 1</a>
-      <a href="#day2">Day 2</a>
-      <a href="#day3">Day 3</a>
-      <a href="#day4">Day 4</a>
-      <a href="#day5">Day 5</a>
+      <a href="#day1">Day 1 抵達</a>
+      <a href="#day2">Day 2 海景</a>
+      <a href="#day3">Day 3 文青</a>
+      <a href="#day4">Day 4 重點日</a>
+      <a href="#day5">Day 5 回程</a>
       <a href="#stay">住宿</a>
     </div>
   </div>
@@ -265,25 +299,25 @@
     <div class="wrap">
       <section id="day1" class="card">
         <h2>Day 1 · 5/15（五）抵達日</h2>
-        <p class="lead">第一晚以輕鬆進入旅行模式為主。傍晚抵達後直接往南浦洞走，吃一頓好吃的，隨便逛逛就很夠了。</p>
-        <div class="day-grid">
+        <p class="lead">第一晚先不趕，抵達後去南浦洞吃點好吃的、逛逛街，讓旅程慢慢開始。</p>
+        <div class="layout">
           <div class="panel">
             <h3>流程敘述</h3>
             <ol class="flow">
-              <li>抵達釜山後先 check-in，放好行李。</li>
-              <li>晚上前往 <b>南浦洞 Nampo-dong</b>，先感受釜山鬧區氛圍。</li>
-              <li>散步逛 <b>BIFF 廣場 BIFF Square</b>，如果還有體力就走去 <b>札嘎其市場 Jagalchi Market</b>。</li>
-              <li>晚餐吃烤肉或豬肉湯飯，這天不用硬跑景點。</li>
+              <li>抵達釜山後先到飯店 check-in，放好行李。</li>
+              <li>晚上前往 <b>南浦洞 Nampo-dong</b>，感受釜山最經典的鬧區氣氛。</li>
+              <li>逛 <b>BIFF 廣場 BIFF Square</b>，有體力再走到 <b>札嘎其市場 Jagalchi Market</b>。</li>
+              <li>晚餐吃烤肉或豬肉湯飯，第一晚以舒服為主。</li>
             </ol>
           </div>
           <div class="panel">
             <h3>地點與晚餐</h3>
             <div class="place-list">
-              <div class="place"><span class="tag">景點</span><strong>南浦洞 Nampo-dong</strong><a href="https://www.google.com/maps/place/Nampo-dong,+Busan/@35.0989,129.0302,16z">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>BIFF 廣場 BIFF Square</strong><a href="https://www.google.com/maps/place/BIFF+Square/@35.0988,129.0285,17z">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>札嘎其市場 Jagalchi Market</strong><a href="https://www.google.com/maps/place/Jagalchi+Market/@35.0975,129.0306,17z">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐</span><strong>味贊王鹽烤肉 南浦店 / Matjanddeul Wang Sogeum Gui Nampo</strong><a href="https://www.google.com/maps/search/?api=1&query=%EB%A7%9B%EC%B0%AC%EB%93%A4%EC%99%95%EC%86%8C%EA%B8%88%EA%B5%AC%EC%9D%B4+%EB%82%A8%ED%8F%AC%EC%A0%90">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐備選</span><strong>豬肉湯飯 Dwaeji Gukbap（南浦洞周邊）</strong><a href="https://www.google.com/maps/search/?api=1&query=Dwaeji+Gukbap+Nampo+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>南浦洞</strong><span class="sub">Nampo-dong</span><a href="https://www.google.com/maps/place/Nampo-dong,+Busan/@35.0989,129.0302,16z">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>BIFF 廣場</strong><span class="sub">BIFF Square</span><a href="https://www.google.com/maps/place/BIFF+Square/@35.0988,129.0285,17z">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>札嘎其市場</strong><span class="sub">Jagalchi Market</span><a href="https://www.google.com/maps/place/Jagalchi+Market/@35.0975,129.0306,17z">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐推薦</span><strong>味贊王鹽烤肉 南浦店</strong><span class="sub">Matjanddeul Wang Sogeum Gui Nampo</span><a href="https://www.google.com/maps/search/?api=1&query=%EB%A7%9B%EC%B0%AC%EB%93%A4%EC%99%95%EC%86%8C%EA%B8%88%EA%B5%AC%EC%9D%B4+%EB%82%A8%ED%8F%AC%EC%A0%90">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐備選</span><strong>豬肉湯飯</strong><span class="sub">Dwaeji Gukbap（南浦洞周邊）</span><a href="https://www.google.com/maps/search/?api=1&query=Dwaeji+Gukbap+Nampo+Busan">Google Maps</a></div>
             </div>
           </div>
         </div>
@@ -291,31 +325,31 @@
 
       <section id="day2" class="card">
         <h2>Day 2 · 5/16（六）海景文青日</h2>
-        <p class="lead">這天是整趟最有海邊旅行感的一天。海雲台、青沙浦、海岸列車、海鮮和夜景都在這天。</p>
-        <div class="day-grid">
+        <p class="lead">這天是海邊散步、搭列車、看海喝咖啡的一天，整趟最有釜山海景感的日子。</p>
+        <div class="layout">
           <div class="panel">
             <h3>流程敘述</h3>
             <ol class="flow">
-              <li>早上在 <b>海雲台 Haeundae</b> 吃漂亮的早午餐。</li>
+              <li>早上在 <b>海雲台 Haeundae</b> 吃漂亮早午餐。</li>
               <li>沿著 <b>海雲台海水浴場 Haeundae Beach</b> 散步。</li>
-              <li>搭 <b>海雲台藍線公園 Haeundae Blueline Park</b> 的列車到 <b>青沙浦 Cheongsapo</b>。</li>
-              <li>中午吃海鮮或烤貝，下午找海景咖啡店坐著放空。</li>
-              <li>晚上在海雲台吃晚餐，最後到 <b>The Bay 101</b> 看夜景。</li>
+              <li>搭 <b>海雲台藍線公園 Haeundae Blueline Park</b> 到 <b>青沙浦 Cheongsapo</b>。</li>
+              <li>中午吃海鮮或烤貝，下午在海景咖啡店休息。</li>
+              <li>晚上在海雲台吃晚餐，再去 <b>The Bay 101</b> 看夜景。</li>
             </ol>
           </div>
           <div class="panel">
             <h3>地點與餐廳</h3>
             <div class="place-list">
-              <div class="place"><span class="tag">早餐</span><strong>Working Holiday Haeundae / 沃金假期海雲台店</strong><a href="https://www.google.com/maps/search/?api=1&query=Working+Holiday+Haeundae">Google Maps</a></div>
-              <div class="place"><span class="tag">早餐備選</span><strong>Prahran Haeundae / 普拉蘭海雲台店</strong><a href="https://www.google.com/maps/search/?api=1&query=Prahran+Haeundae+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>海雲台海水浴場 / Haeundae Beach</strong><a href="https://www.google.com/maps/place/Haeundae+Beach/@35.1587,129.1604,17z">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>海雲台藍線公園 / Haeundae Blueline Park</strong><a href="https://www.google.com/maps/search/?api=1&query=Haeundae+Blueline+Park">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>青沙浦 / Cheongsapo</strong><a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>青沙浦天空步道 / Cheongsapo Daritdol Skywalk</strong><a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Daritdol+Skywalk">Google Maps</a></div>
-              <div class="place"><span class="tag">午餐</span><strong>青沙浦烤貝街 / Cheongsapo Grilled Clams Street</strong><a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Grilled+Clams+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">咖啡</span><strong>Rendeja-Vous Haeundae</strong><a href="https://www.google.com/maps/search/?api=1&query=Rendeja-Vous+Haeundae">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐</span><strong>海雲台암소갈비집 / Haeundae Amso Galbijip</strong><a href="https://www.google.com/maps/search/?api=1&query=Haeundae+Amso+Galbijip">Google Maps</a></div>
-              <div class="place"><span class="tag">夜景</span><strong>The Bay 101</strong><a href="https://www.google.com/maps/place/The+Bay+101/@35.1569,129.1521,17z">Google Maps</a></div>
+              <div class="place"><span class="tag">早餐</span><strong>沃金假期海雲台店</strong><span class="sub">Working Holiday Haeundae</span><a href="https://www.google.com/maps/search/?api=1&query=Working+Holiday+Haeundae">Google Maps</a></div>
+              <div class="place"><span class="tag">早餐備選</span><strong>普拉蘭海雲台店</strong><span class="sub">Prahran Haeundae</span><a href="https://www.google.com/maps/search/?api=1&query=Prahran+Haeundae+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>海雲台海水浴場</strong><span class="sub">Haeundae Beach</span><a href="https://www.google.com/maps/place/Haeundae+Beach/@35.1587,129.1604,17z">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>海雲台藍線公園</strong><span class="sub">Haeundae Blueline Park</span><a href="https://www.google.com/maps/search/?api=1&query=Haeundae+Blueline+Park">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>青沙浦</strong><span class="sub">Cheongsapo</span><a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>青沙浦天空步道</strong><span class="sub">Cheongsapo Daritdol Skywalk</span><a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Daritdol+Skywalk">Google Maps</a></div>
+              <div class="place"><span class="tag">午餐</span><strong>青沙浦烤貝街</strong><span class="sub">Cheongsapo Grilled Clams Street</span><a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Grilled+Clams+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">咖啡</span><strong>Rendeja-Vous Haeundae</strong><span class="sub">海景咖啡休息點</span><a href="https://www.google.com/maps/search/?api=1&query=Rendeja-Vous+Haeundae">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐</span><strong>海雲台암소갈비집</strong><span class="sub">Haeundae Amso Galbijip</span><a href="https://www.google.com/maps/search/?api=1&query=Haeundae+Amso+Galbijip">Google Maps</a></div>
+              <div class="place"><span class="tag">夜景</span><strong>The Bay 101</strong><span class="sub">海邊夜景點</span><a href="https://www.google.com/maps/place/The+Bay+101/@35.1569,129.1521,17z">Google Maps</a></div>
             </div>
           </div>
         </div>
@@ -323,60 +357,60 @@
 
       <section id="day3" class="card">
         <h2>Day 3 · 5/17（日）文青散步日</h2>
-        <p class="lead">這天是最適合慢慢散步、拍照和喝咖啡的一天，白淺灘和田浦都很適合情侶。</p>
-        <div class="day-grid">
+        <p class="lead">這天適合慢慢走、拍照、喝咖啡。白淺灘和田浦咖啡街的組合很剛好。</p>
+        <div class="layout">
           <div class="panel">
             <h3>流程敘述</h3>
             <ol class="flow">
-              <li>上午先前往 <b>白淺灘文化村 Huinnyeoul Culture Village</b> 看海散步。</li>
+              <li>上午前往 <b>白淺灘文化村 Huinnyeoul Culture Village</b> 看海散步。</li>
               <li>中午在 <b>影島 Yeongdo</b> 周邊吃飯。</li>
-              <li>下午移動到 <b>田浦咖啡街 Jeonpo Cafe Street</b>，喝咖啡、吃甜點、逛小店。</li>
-              <li>晚上在西面或田浦附近吃一頓有質感但不太正式的晚餐。</li>
+              <li>下午到 <b>田浦咖啡街 Jeonpo Cafe Street</b>，喝咖啡、吃甜點、逛小店。</li>
+              <li>晚上在西面或田浦附近吃一頓舒服的晚餐。</li>
             </ol>
           </div>
           <div class="panel">
             <h3>地點與餐廳</h3>
             <div class="place-list">
-              <div class="place"><span class="tag">早餐</span><strong>Your Type Brunch Jeonpo / 你的類型早午餐</strong><a href="https://www.google.com/maps/search/?api=1&query=Your+Type+Brunch+Jeonpo">Google Maps</a></div>
-              <div class="place"><span class="tag">早餐備選</span><strong>Dino Brunch &amp; Dining / 迪諾早午餐餐酒館</strong><a href="https://www.google.com/maps/search/?api=1&query=Dino+Brunch+%26+Dining+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>白淺灘文化村 / Huinnyeoul Culture Village</strong><a href="https://www.google.com/maps/search/?api=1&query=Huinnyeoul+Culture+Village+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>影島 / Yeongdo</strong><a href="https://www.google.com/maps/search/?api=1&query=Yeongdo+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">午餐</span><strong>影島餐廳區 / Yeongdo Restaurant Area</strong><a href="https://www.google.com/maps/search/?api=1&query=Yeongdo+Restaurant+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">咖啡</span><strong>Dala 100% Chocolate Cafe / 達拉巧克力咖啡</strong><a href="https://www.google.com/maps/search/?api=1&query=Dala+100%25+Chocolate+Cafe+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>田浦咖啡街 / Jeonpo Cafe Street</strong><a href="https://www.google.com/maps/place/Jeonpo+Cafe+Street/@35.1578,129.0671,17z">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐</span><strong>몽중식 전포 / Mongjungsik Jeonpo</strong><a href="https://www.google.com/maps/search/?api=1&query=%EB%AA%BD%EC%A4%91%EC%8B%9D+%EC%A0%84%ED%8F%AC">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐備選</span><strong>西面韓牛 / Hanwoo Seomyeon</strong><a href="https://www.google.com/maps/search/?api=1&query=Hanwoo+Seomyeon+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">早餐</span><strong>你的類型早午餐</strong><span class="sub">Your Type Brunch Jeonpo</span><a href="https://www.google.com/maps/search/?api=1&query=Your+Type+Brunch+Jeonpo">Google Maps</a></div>
+              <div class="place"><span class="tag">早餐備選</span><strong>迪諾早午餐餐酒館</strong><span class="sub">Dino Brunch & Dining</span><a href="https://www.google.com/maps/search/?api=1&query=Dino+Brunch+%26+Dining+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>白淺灘文化村</strong><span class="sub">Huinnyeoul Culture Village</span><a href="https://www.google.com/maps/search/?api=1&query=Huinnyeoul+Culture+Village+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>影島</strong><span class="sub">Yeongdo</span><a href="https://www.google.com/maps/search/?api=1&query=Yeongdo+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">午餐</span><strong>影島餐廳區</strong><span class="sub">Yeongdo Restaurant Area</span><a href="https://www.google.com/maps/search/?api=1&query=Yeongdo+Restaurant+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">咖啡</span><strong>達拉巧克力咖啡</strong><span class="sub">Dala 100% Chocolate Cafe</span><a href="https://www.google.com/maps/search/?api=1&query=Dala+100%25+Chocolate+Cafe+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>田浦咖啡街</strong><span class="sub">Jeonpo Cafe Street</span><a href="https://www.google.com/maps/place/Jeonpo+Cafe+Street/@35.1578,129.0671,17z">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐</span><strong>몽중식 전포</strong><span class="sub">Mongjungsik Jeonpo</span><a href="https://www.google.com/maps/search/?api=1&query=%EB%AA%BD%EC%A4%91%EC%8B%9D+%EC%A0%84%ED%8F%AC">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐備選</span><strong>西面韓牛</strong><span class="sub">Hanwoo Seomyeon</span><a href="https://www.google.com/maps/search/?api=1&query=Hanwoo+Seomyeon+Busan">Google Maps</a></div>
             </div>
           </div>
         </div>
       </section>
 
       <section id="day4" class="card">
-        <h2>Day 4 · 5/18（一）重點日</h2>
-        <p class="lead">今天的重點是整體氛圍，不是跑很多點。海景、咖啡、好晚餐、漂亮夜景，就是最好的安排。</p>
-        <div class="day-grid">
+        <h2>Day 4 · 5/18（一）重點日 ✨</h2>
+        <p class="lead">今天的主題是氣氛。海景、咖啡、好晚餐、漂亮夜景，讓整天看起來自然又剛好。</p>
+        <div class="layout">
           <div class="panel">
             <h3>流程敘述</h3>
             <ol class="flow">
-              <li>上午到 <b>廣安里海水浴場 Gwangalli Beach</b> 看海，慢慢散步。</li>
-              <li>中午在 <b>民樂 The Market Millac the Market</b> 一帶吃午餐。</li>
-              <li>下午安排海景咖啡店和拍照時間，保留一點留白會更舒服。</li>
+              <li>上午到 <b>廣安里海水浴場 Gwangalli Beach</b> 看海散步。</li>
+              <li>中午在 <b>民樂 The Market Millac the Market</b> 一帶吃飯。</li>
+              <li>下午安排海景咖啡店、拍照與留白時間。</li>
               <li>晚上吃整趟最好的晚餐。</li>
-              <li>晚餐後到海邊走走，看 <b>廣安大橋 Gwangan Bridge</b> 夜景。</li>
+              <li>晚餐後再去看 <b>廣安大橋 Gwangan Bridge</b> 夜景。</li>
             </ol>
           </div>
           <div class="panel">
             <h3>地點與餐廳</h3>
             <div class="place-list">
-              <div class="place"><span class="tag">早餐</span><strong>廣安里早午餐 / Brunch Cafe Gwangalli</strong><a href="https://www.google.com/maps/search/?api=1&query=Brunch+Cafe+Gwangalli+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>廣安里海水浴場 / Gwangalli Beach</strong><a href="https://www.google.com/maps/place/Gwangalli+Beach/@35.1532,129.1187,16z">Google Maps</a></div>
-              <div class="place"><span class="tag">景點</span><strong>廣安大橋 / Gwangan Bridge</strong><a href="https://www.google.com/maps/search/?api=1&query=Gwangan+Bridge+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">午餐</span><strong>民樂 The Market / Millac the Market</strong><a href="https://www.google.com/maps/place/Millac+the+Market/@35.1531,129.1184,17z">Google Maps</a></div>
-              <div class="place"><span class="tag">午餐備選</span><strong>Clam Number One / 海景烤蛤餐廳</strong><a href="https://www.google.com/maps/search/?api=1&query=Clam+Number+One+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">咖啡</span><strong>廣安里海景咖啡店 / Ocean View Cafe Gwangalli</strong><a href="https://www.google.com/maps/search/?api=1&query=Ocean+View+Cafe+Gwangalli+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐推薦</span><strong>Outro by Vito</strong><a href="https://www.google.com/maps/search/?api=1&query=Outro+by+Vito+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐備選</span><strong>Bistro Chi / 比斯特羅 Chi</strong><a href="https://www.google.com/maps/search/?api=1&query=Bistro+Chi+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">晚餐備選</span><strong>Gyuichi Premium Gwangan / 牛一 Premium 廣安店</strong><a href="https://www.google.com/maps/search/?api=1&query=Gyuichi+Premium+Gwangan+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">早餐</span><strong>廣安里早午餐</strong><span class="sub">Brunch Cafe Gwangalli</span><a href="https://www.google.com/maps/search/?api=1&query=Brunch+Cafe+Gwangalli+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>廣安里海水浴場</strong><span class="sub">Gwangalli Beach</span><a href="https://www.google.com/maps/place/Gwangalli+Beach/@35.1532,129.1187,16z">Google Maps</a></div>
+              <div class="place"><span class="tag">景點</span><strong>廣安大橋</strong><span class="sub">Gwangan Bridge</span><a href="https://www.google.com/maps/search/?api=1&query=Gwangan+Bridge+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">午餐</span><strong>民樂 The Market</strong><span class="sub">Millac the Market</span><a href="https://www.google.com/maps/place/Millac+the+Market/@35.1531,129.1184,17z">Google Maps</a></div>
+              <div class="place"><span class="tag">午餐備選</span><strong>海景烤蛤餐廳</strong><span class="sub">Clam Number One</span><a href="https://www.google.com/maps/search/?api=1&query=Clam+Number+One+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">咖啡</span><strong>廣安里海景咖啡店</strong><span class="sub">Ocean View Cafe Gwangalli</span><a href="https://www.google.com/maps/search/?api=1&query=Ocean+View+Cafe+Gwangalli+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐推薦</span><strong>Outro by Vito</strong><span class="sub">氣氛感最強</span><a href="https://www.google.com/maps/search/?api=1&query=Outro+by+Vito+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐備選</span><strong>Bistro Chi</strong><span class="sub">比較輕鬆浪漫</span><a href="https://www.google.com/maps/search/?api=1&query=Bistro+Chi+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">晚餐備選</span><strong>牛一 Premium 廣安店</strong><span class="sub">Gyuichi Premium Gwangan</span><a href="https://www.google.com/maps/search/?api=1&query=Gyuichi+Premium+Gwangan+Busan">Google Maps</a></div>
             </div>
           </div>
         </div>
@@ -384,21 +418,21 @@
 
       <section id="day5" class="card">
         <h2>Day 5 · 5/19（二）回程日</h2>
-        <p class="lead">最後一天只要舒服就好。找一間順眼的早餐店，吃完就出發去機場。</p>
-        <div class="day-grid">
+        <p class="lead">最後一天只要舒服就好。找一間順眼的早餐店，吃完就慢慢去機場。</p>
+        <div class="layout">
           <div class="panel">
             <h3>流程敘述</h3>
             <ol class="flow">
               <li>起床後在飯店附近吃早餐。</li>
               <li>慢慢整理行李，直接前往機場。</li>
-              <li>這天不要再硬塞景點，留一點餘韻給旅行。</li>
+              <li>最後一天不再塞景點，讓旅行收尾得漂亮一點。</li>
             </ol>
           </div>
           <div class="panel">
             <h3>早餐</h3>
             <div class="place-list">
-              <div class="place"><span class="tag">如果住西面</span><strong>早餐咖啡店 / Breakfast Cafe Seomyeon</strong><a href="https://www.google.com/maps/search/?api=1&query=Breakfast+Cafe+Seomyeon+Busan">Google Maps</a></div>
-              <div class="place"><span class="tag">如果住海雲台</span><strong>早餐咖啡店 / Breakfast Cafe Haeundae</strong><a href="https://www.google.com/maps/search/?api=1&query=Breakfast+Cafe+Haeundae+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">如果住西面</span><strong>西面早餐咖啡店</strong><span class="sub">Breakfast Cafe Seomyeon</span><a href="https://www.google.com/maps/search/?api=1&query=Breakfast+Cafe+Seomyeon+Busan">Google Maps</a></div>
+              <div class="place"><span class="tag">如果住海雲台</span><strong>海雲台早餐咖啡店</strong><span class="sub">Breakfast Cafe Haeundae</span><a href="https://www.google.com/maps/search/?api=1&query=Breakfast+Cafe+Haeundae+Busan">Google Maps</a></div>
             </div>
           </div>
         </div>
@@ -406,14 +440,22 @@
 
       <section id="stay" class="card">
         <h2>住宿建議</h2>
-        <p class="lead">如果是第一次去釜山，我會推薦住西面。交通最平衡，也比較方便串接每天的行程。</p>
-        <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
-          <div class="place"><span class="tag">最平衡</span><strong>西面 / Seomyeon</strong><span>交通方便，去海雲台、南浦洞、廣安里都算順。</span><a href="https://www.google.com/maps/place/Seomyeon,+Busan/@35.1577,129.0592,16z">Google Maps</a></div>
-          <div class="place"><span class="tag">最有海景感</span><strong>海雲台 / Haeundae</strong><span>如果你們更重視海邊度假感，可以住海雲台。</span><a href="https://www.google.com/maps/place/Haeundae+Beach/@35.1587,129.1604,17z">Google Maps</a></div>
+        <p class="lead">第一次去釜山的話，還是最推薦住西面。交通比較平均，行程串起來最省力。</p>
+        <div class="layout">
+          <div class="panel">
+            <div class="place-list">
+              <div class="place"><span class="tag">最平衡</span><strong>西面</strong><span class="sub">Seomyeon，去海雲台、南浦洞、廣安里都順。</span><a href="https://www.google.com/maps/place/Seomyeon,+Busan/@35.1577,129.0592,16z">Google Maps</a></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="place-list">
+              <div class="place"><span class="tag">最有海景感</span><strong>海雲台</strong><span class="sub">Haeundae，如果更重視海邊度假感可以住這裡。</span><a href="https://www.google.com/maps/place/Haeundae+Beach/@35.1587,129.1604,17z">Google Maps</a></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <p class="footer-note">Busan Trip Guide 2.0 · 讓旅行看起來像一本真的小手冊</p>
+      <p class="footer-note">Busan Trip Guide · Cute Birthday Edition · 手機上也好讀 💗</p>
     </div>
   </main>
 </body>
