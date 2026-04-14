@@ -125,11 +125,24 @@
       margin-top: 18px;
     }
     .summary-card {
-      background: var(--paper);
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,247,249,.92));
       border: 1px solid var(--line);
-      border-radius: 20px;
+      border-radius: 22px;
       box-shadow: var(--shadow);
-      padding: 16px;
+      padding: 18px;
+    }
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      color: #8d5b70;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
     }
     .summary-card .k {
       font-size: 11px;
@@ -361,7 +374,7 @@
 
   <section class="wrap" style="margin-top:10px; margin-bottom:16px;">
     <div class="card" style="padding:16px 16px 10px;">
-      <h2 style="font-size:24px;">行前小卡</h2>
+      <span class="section-kicker">Before you go</span><h2 style="font-size:24px;">行前小卡</h2>
       <p class="lead">把真正會用到的資訊放前面，讓整份手冊更像一份可以帶著走的小旅行 booklet。</p>
       <div class="layout">
         <div class="panel">
@@ -464,7 +477,7 @@
   <main>
     <div class="wrap">
       <section id="day1" class="card">
-        <h2>Day 1 · 5/15（五）抵達日</h2>
+        <span class="section-kicker">Arrival</span><h2>Day 1 · 5/15（五）抵達日</h2>
         <p class="lead">第一晚不趕行程，抵達後去南浦洞吃點好吃的、逛逛街，讓旅行慢慢開始。</p>
         <div class="meta-row"><span class="meta-pill">體力感：輕鬆</span><span class="meta-pill">主要區域：南浦洞</span></div>
         <div class="layout">
@@ -491,7 +504,7 @@
       </section>
 
       <section id="day2" class="card">
-        <h2>Day 2 · 5/16（六）海景與列車日</h2>
+        <span class="section-kicker">Sea & train</span><h2>Day 2 · 5/16（六）海景與列車日</h2>
         <p class="lead">這天以海邊散步、搭列車、看海喝咖啡為主，是整趟最有釜山海景感的一天。</p>
         <div class="meta-row"><span class="meta-pill">體力感：中等</span><span class="meta-pill">主要區域：海雲台 / 青沙浦</span></div>
         <div class="layout">
@@ -524,7 +537,7 @@
       </section>
 
       <section id="day3" class="card">
-        <h2>Day 3 · 5/17（日）慢步與咖啡日</h2>
+        <span class="section-kicker">Slow walk & coffee</span><h2>Day 3 · 5/17（日）慢步與咖啡日</h2>
         <p class="lead">這天適合慢慢走、拍照、喝咖啡，白淺灘和田浦咖啡街的組合很剛好。</p>
         <div class="meta-row"><span class="meta-pill">體力感：中等偏輕</span><span class="meta-pill">主要區域：白淺灘 / 田浦</span></div>
         <div class="layout">
@@ -555,7 +568,7 @@
       </section>
 
       <section id="day4" class="card">
-        <h2>Day 4 · 5/18（一）生日主日 ✨</h2>
+        <span class="section-kicker">Birthday highlight</span><h2>Day 4 · 5/18（一）生日主日 ✨</h2>
         <p class="lead">今天的主題是氣氛，海景、咖啡、好晚餐和漂亮夜景都集中在這一天。</p>
         <div class="meta-row"><span class="meta-pill">體力感：輕鬆</span><span class="meta-pill">主要區域：廣安里</span></div>
         <div class="layout">
@@ -587,7 +600,7 @@
       </section>
 
       <section id="day5" class="card">
-        <h2>Day 5 · 5/19（二）回程日</h2>
+        <span class="section-kicker">Departure</span><h2>Day 5 · 5/19（二）回程日</h2>
         <p class="lead">最後一天只要舒服就好，找一間順眼的早餐店，吃完再慢慢去機場。</p>
         <div class="meta-row"><span class="meta-pill">體力感：輕鬆</span><span class="meta-pill">主要區域：飯店周邊 / 機場</span></div>
         <div class="layout">
@@ -610,7 +623,7 @@
       </section>
 
       <section id="stay" class="card">
-        <h2>住宿建議</h2>
+        <span class="section-kicker">Stay</span><h2>住宿建議</h2>
         <p class="lead">第一次去釜山的話，還是最推薦住西面。交通比較平均，行程串起來最省力。</p>
         <div class="layout">
           <div class="panel">
@@ -628,7 +641,7 @@
         </div>
       </section>
 
-      <p class="footer-note">Busan Trip Guide · Cute Birthday Edition · 手機上也好讀 💗</p>
+      <p class="footer-note">Busan Birthday Trip Guide · 可直接分享的旅行小手冊 💗</p>
     </div>
   </main>
 </body>
