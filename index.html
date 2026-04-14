@@ -15,18 +15,18 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <style>
     :root {
-      --bg: #fff8f7;
-      --paper: rgba(255,255,255,.92);
-      --paper-2: #fffdfd;
+      --bg: #fff9f8;
+      --paper: rgba(255,255,255,.94);
+      --paper-2: #fffefe;
       --ink: #2c2432;
       --muted: #7a6c79;
-      --pink: #f49cb6;
-      --peach: #ffc8a2;
-      --cream: #fff1d6;
-      --mint: #bde7da;
-      --lav: #d9d1ff;
+      --pink: #ee9db7;
+      --peach: #ffd2b6;
+      --cream: #fff3de;
+      --mint: #c9eadf;
+      --lav: #ddd7ff;
       --line: rgba(115,90,110,.12);
-      --shadow: 0 14px 40px rgba(184,105,132,.12);
+      --shadow: 0 20px 48px rgba(181, 110, 136, .14);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 18px;
@@ -46,17 +46,17 @@
     }
     a { color: #116c64; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
 
     .hero {
-      padding: 28px 0 18px;
+      padding: 34px 0 22px;
     }
     .hero-card {
       background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,246,248,.9));
       border: 1px solid rgba(255,255,255,.8);
-      border-radius: 32px;
+      border-radius: 34px;
       box-shadow: var(--shadow);
-      padding: 22px 18px 20px;
+      padding: 26px 22px 24px;
       position: relative;
       overflow: hidden;
     }
@@ -82,7 +82,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
+      padding: 9px 13px;
       border-radius: 999px;
       background: rgba(244,156,182,.16);
       color: #a94767;
@@ -92,24 +92,24 @@
     }
     h1 {
       margin: 14px 0 8px;
-      font-size: clamp(30px, 8vw, 54px);
+      font-size: clamp(32px, 8vw, 58px);
       line-height: 1.07;
       letter-spacing: -.03em;
     }
     .hero p {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
-      max-width: 740px;
+      font-size: 17px;
+      max-width: 760px;
     }
     .chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
+      gap: 10px;
+      margin-top: 18px;
     }
     .chip {
-      padding: 8px 12px;
+      padding: 9px 13px;
       border-radius: 999px;
       background: rgba(255,255,255,.86);
       border: 1px solid var(--line);
@@ -121,15 +121,15 @@
     .summary {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-top: 16px;
+      gap: 12px;
+      margin-top: 18px;
     }
     .summary-card {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 20px;
       box-shadow: var(--shadow);
-      padding: 14px;
+      padding: 16px;
     }
     .summary-card .k {
       font-size: 11px;
@@ -140,7 +140,7 @@
     }
     .summary-card .v {
       margin-top: 5px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 800;
     }
 
@@ -163,7 +163,7 @@
     .nav-inner::-webkit-scrollbar { display: none; }
     .nav a {
       white-space: nowrap;
-      padding: 10px 13px;
+      padding: 11px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,.92);
       border: 1px solid var(--line);
@@ -176,20 +176,20 @@
     .card {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
+      border-radius: 30px;
       box-shadow: var(--shadow);
-      padding: 18px;
-      margin-bottom: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
     }
     h2 {
       margin: 0 0 6px;
-      font-size: 25px;
+      font-size: 27px;
       letter-spacing: -.02em;
     }
     .lead {
       margin: 0 0 14px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
     }
     .layout {
       display: grid;
@@ -200,11 +200,11 @@
       background: var(--paper-2);
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      padding: 15px;
+      padding: 16px;
     }
     .panel h3 {
       margin: 0 0 10px;
-      font-size: 16px;
+      font-size: 17px;
       color: #5f4a5d;
     }
     .flow {
@@ -225,8 +225,8 @@
     .overview-box {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      padding: 14px;
+      border-radius: 20px;
+      padding: 16px;
     }
     .overview-box .k {
       font-size: 11px;
@@ -248,7 +248,7 @@
       margin: 10px 0 2px;
     }
     .meta-pill {
-      padding: 8px 12px;
+      padding: 9px 13px;
       border-radius: 999px;
       background: rgba(255,255,255,.9);
       border: 1px solid var(--line);
@@ -264,9 +264,9 @@
     .link-card {
       display: block;
       border: 1px solid var(--line);
-      border-radius: var(--radius-md);
+      border-radius: 20px;
       background: #fff;
-      padding: 13px;
+      padding: 14px;
       color: inherit;
     }
     .link-card:hover {
@@ -285,9 +285,9 @@
     }
     .place {
       border: 1px solid var(--line);
-      border-radius: var(--radius-md);
+      border-radius: 20px;
       background: #fff;
-      padding: 13px;
+      padding: 14px;
     }
     .tag {
       display: inline-block;
@@ -323,14 +323,14 @@
     @media (min-width: 760px) {
       .wrap { padding: 0 20px; }
       .hero { padding: 54px 0 24px; }
-      .hero-card { padding: 34px; }
-      .hero p { font-size: 17px; }
+      .hero-card { padding: 40px; }
+      .hero p { font-size: 18px; }
       .summary { grid-template-columns: repeat(4, 1fr); }
       .layout { grid-template-columns: 1.12fr .95fr; gap: 16px; }
       .card { padding: 26px; margin-bottom: 20px; }
-      h2 { font-size: 30px; }
-      .lead { font-size: 16px; }
-      .panel { padding: 18px; }
+      h2 { font-size: 32px; }
+      .lead { font-size: 17px; }
+      .panel { padding: 20px; }
     }
   </style>
 </head>
@@ -338,9 +338,9 @@
   <header class="hero">
     <div class="wrap">
       <div class="hero-card">
-        <span class="eyebrow">🎀 Busan Trip Guide · Cute Birthday Edition</span>
+        <span class="eyebrow">Busan Trip Guide · Birthday Edition</span>
         <h1>釜山旅行手冊</h1>
-        <p>一份適合雙人共用的釜山旅行手冊，帶一點可愛的生日氛圍，保留舒服節奏、海景、文青咖啡和好吃晚餐。手機上也能直接滑著看，不用一直放大縮小。</p>
+        <p>一份適合雙人共用的釜山旅行手冊，保留生日感、海景、文青散步與好吃晚餐。整體節奏舒服，也適合直接在手機上閱讀。</p>
         <div class="chips">
           <span class="chip">2026/05/15 - 2026/05/19</span>
           <span class="chip">5天4夜</span>
