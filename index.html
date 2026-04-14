@@ -26,7 +26,7 @@
       --mint: #c9eadf;
       --lav: #ddd7ff;
       --line: rgba(115,90,110,.12);
-      --shadow: 0 20px 48px rgba(181, 110, 136, .14);
+      --shadow: 0 24px 60px rgba(173, 108, 133, .16);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 18px;
@@ -39,10 +39,10 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
       line-height: 1.72;
       background:
-        radial-gradient(circle at 12% 8%, rgba(244,156,182,.25), transparent 18%),
-        radial-gradient(circle at 88% 12%, rgba(217,209,255,.28), transparent 20%),
-        radial-gradient(circle at 80% 78%, rgba(189,231,218,.25), transparent 22%),
-        linear-gradient(180deg, #fff9f8 0%, #fff6f3 100%);
+        radial-gradient(circle at 10% 8%, rgba(238,157,183,.22), transparent 18%),
+        radial-gradient(circle at 88% 10%, rgba(221,215,255,.30), transparent 20%),
+        radial-gradient(circle at 80% 78%, rgba(201,234,223,.24), transparent 22%),
+        linear-gradient(180deg, #fffaf9 0%, #fff5f1 100%);
     }
     a { color: #116c64; text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -52,11 +52,11 @@
       padding: 34px 0 22px;
     }
     .hero-card {
-      background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,246,248,.9));
+      background: linear-gradient(145deg, rgba(255,255,255,.95), rgba(255,245,248,.92));
       border: 1px solid rgba(255,255,255,.8);
       border-radius: 34px;
       box-shadow: var(--shadow);
-      padding: 26px 22px 24px;
+      padding: 32px 26px 28px;
       position: relative;
       overflow: hidden;
     }
@@ -265,8 +265,8 @@
       display: block;
       border: 1px solid var(--line);
       border-radius: 20px;
-      background: #fff;
-      padding: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,250,251,.92));
+      padding: 15px;
       color: inherit;
     }
     .link-card:hover {
@@ -286,8 +286,8 @@
     .place {
       border: 1px solid var(--line);
       border-radius: 20px;
-      background: #fff;
-      padding: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,250,251,.92));
+      padding: 15px;
     }
     .tag {
       display: inline-block;
@@ -338,10 +338,10 @@
   <header class="hero">
     <div class="wrap">
       <div class="hero-card">
-        <span class="eyebrow">Busan Trip Guide · Birthday Edition</span>
-        <h1>釜山旅行手冊</h1>
-        <p>一份適合雙人共用的釜山旅行手冊，把生日感、海景、文青散步與舒服晚餐整理在同一頁。節奏不趕，也適合直接用手機閱讀。</p>
-        <div class="chips">
+        <span class="eyebrow">Busan Birthday Trip Guide</span>
+        <h1>釜山生日旅行手冊</h1>
+        <p>把海景、散步、咖啡、舒服晚餐和生日感整理在同一頁，做成一份適合雙人共用、也適合直接分享出去的釜山旅行手冊。</p>
+        <div class="chips" style="margin-top:20px;">
           <span class="chip">2026/05/15 - 2026/05/19</span>
           <span class="chip">5天4夜</span>
           <span class="chip">文青散步</span>
@@ -359,10 +359,10 @@
     </div>
   </header>
 
-  <section class="wrap" style="margin-top:4px; margin-bottom:14px;">
+  <section class="wrap" style="margin-top:10px; margin-bottom:16px;">
     <div class="card" style="padding:16px 16px 10px;">
-      <h2 style="font-size:22px;">行前小卡</h2>
-      <p class="lead">把實際會用到的資訊放前面，出發前看一次就好。</p>
+      <h2 style="font-size:24px;">行前小卡</h2>
+      <p class="lead">把真正會用到的資訊放前面，讓整份手冊更像一份可以帶著走的小旅行 booklet。</p>
       <div class="layout">
         <div class="panel">
           <h3>航班資訊卡</h3>
@@ -491,7 +491,7 @@
       </section>
 
       <section id="day2" class="card">
-        <h2>Day 2 · 5/16（六）海景文青日</h2>
+        <h2>Day 2 · 5/16（六）海景與列車日</h2>
         <p class="lead">這天以海邊散步、搭列車、看海喝咖啡為主，是整趟最有釜山海景感的一天。</p>
         <div class="meta-row"><span class="meta-pill">體力感：中等</span><span class="meta-pill">主要區域：海雲台 / 青沙浦</span></div>
         <div class="layout">
@@ -524,7 +524,7 @@
       </section>
 
       <section id="day3" class="card">
-        <h2>Day 3 · 5/17（日）文青散步日</h2>
+        <h2>Day 3 · 5/17（日）慢步與咖啡日</h2>
         <p class="lead">這天適合慢慢走、拍照、喝咖啡，白淺灘和田浦咖啡街的組合很剛好。</p>
         <div class="meta-row"><span class="meta-pill">體力感：中等偏輕</span><span class="meta-pill">主要區域：白淺灘 / 田浦</span></div>
         <div class="layout">
@@ -555,7 +555,7 @@
       </section>
 
       <section id="day4" class="card">
-        <h2>Day 4 · 5/18（一）重點日 ✨</h2>
+        <h2>Day 4 · 5/18（一）生日主日 ✨</h2>
         <p class="lead">今天的主題是氣氛，海景、咖啡、好晚餐和漂亮夜景都集中在這一天。</p>
         <div class="meta-row"><span class="meta-pill">體力感：輕鬆</span><span class="meta-pill">主要區域：廣安里</span></div>
         <div class="layout">
