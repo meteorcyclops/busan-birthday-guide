@@ -325,12 +325,76 @@
       font-size: 13px;
       margin-bottom: 7px;
     }
+
+    @keyframes fadeUpSoft {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes gentleFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+    .hero-card {
+      animation: fadeUpSoft .8s ease both;
+    }
+    .summary-card,
+    .card,
+    .overview-box,
+    .panel,
+    .link-card,
+    .place {
+      transition: transform .28s ease, box-shadow .28s ease, background .28s ease, opacity .5s ease;
+    }
+    .summary-card:hover,
+    .panel:hover,
+    .place:hover,
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .chips .chip {
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+    .chips .chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(173, 108, 133, .10);
+    }
+    .hero-card::before {
+      animation: gentleFloat 9s ease-in-out infinite;
+    }
+    .hero-card::after {
+      animation: gentleFloat 12s ease-in-out infinite reverse;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      will-change: transform, opacity;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
     .footer-note {
       text-align: center;
       color: var(--muted);
       font-size: 13px;
       margin-top: 18px;
       padding-bottom: 20px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
 
     @media (min-width: 760px) {
@@ -350,7 +414,7 @@
 <body>
   <header class="hero">
     <div class="wrap">
-      <div class="hero-card">
+      <div class="hero-card reveal">
         <span class="eyebrow">Busan Birthday Trip Guide</span>
         <h1>釜山生日旅行手冊</h1>
         <p>把海景、散步、咖啡、舒服晚餐和生日感整理在同一頁，做成一份適合雙人共用、也適合直接分享出去的釜山旅行手冊。</p>
@@ -363,21 +427,21 @@
           <span class="chip">釜山航空 Busan Air</span>
         </div>
         <div class="summary">
-          <div class="summary-card"><div class="k">航班</div><div class="v">TPE → PUS</div></div>
-          <div class="summary-card"><div class="k">住宿建議</div><div class="v">西面 Seomyeon</div></div>
-          <div class="summary-card"><div class="k">旅行氣氛</div><div class="v">舒服、好拍、慢節奏</div></div>
-          <div class="summary-card"><div class="k">重點日晚餐</div><div class="v">廣安里 Gwangalli</div></div>
+          <div class="summary-card reveal"><div class="k">航班</div><div class="v">TPE → PUS</div></div>
+          <div class="summary-card reveal"><div class="k">住宿建議</div><div class="v">西面 Seomyeon</div></div>
+          <div class="summary-card reveal"><div class="k">旅行氣氛</div><div class="v">舒服、好拍、慢節奏</div></div>
+          <div class="summary-card reveal"><div class="k">重點日晚餐</div><div class="v">廣安里 Gwangalli</div></div>
         </div>
       </div>
     </div>
   </header>
 
   <section class="wrap" style="margin-top:10px; margin-bottom:16px;">
-    <div class="card" style="padding:16px 16px 10px;">
+    <div class="card reveal" style="padding:16px 16px 10px;">
       <span class="section-kicker">Before you go</span><h2 style="font-size:24px;">行前小卡</h2>
       <p class="lead">把真正會用到的資訊放前面，讓整份手冊更像一份可以帶著走的小旅行 booklet。</p>
       <div class="layout">
-        <div class="panel">
+        <div class="panel reveal">
           <h3>航班資訊卡</h3>
           <div class="place-list">
             <div class="place">
@@ -397,7 +461,7 @@
             </div>
           </div>
         </div>
-        <div class="panel">
+        <div class="panel reveal">
           <h3>預算卡</h3>
           <div class="place-list">
             <div class="place">
@@ -419,7 +483,7 @@
         </div>
       </div>
       <div class="layout" style="margin-top:12px;">
-        <div class="panel">
+        <div class="panel reveal">
           <h3>穿搭建議</h3>
           <div class="place-list">
             <div class="place">
@@ -439,7 +503,7 @@
             </div>
           </div>
         </div>
-        <div class="panel">
+        <div class="panel reveal">
           <h3>行李清單</h3>
           <div class="place-list">
             <div class="place">
@@ -476,12 +540,12 @@
 
   <main>
     <div class="wrap">
-      <section id="day1" class="card">
+      <section id="day1" class="card reveal">
         <span class="section-kicker">Arrival</span><h2>Day 1 · 5/15（五）抵達日</h2>
         <p class="lead">第一晚不趕行程，抵達後去南浦洞吃點好吃的、逛逛街，讓旅行慢慢開始。</p>
         <div class="meta-row"><span class="meta-pill">體力感：輕鬆</span><span class="meta-pill">主要區域：南浦洞</span></div>
         <div class="layout">
-          <div class="panel">
+          <div class="panel reveal">
             <h3>今日安排</h3>
             <ol class="flow">
               <li>抵達釜山後先到飯店 check-in，放好行李。</li>
@@ -490,7 +554,7 @@
               <li>晚餐吃烤肉或豬肉湯飯，第一晚以舒服為主。</li>
             </ol>
           </div>
-          <div class="panel">
+          <div class="panel reveal">
             <h3>景點與餐廳</h3>
             <div class="link-list">
               <a class="link-card" target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/Nampo-dong,+Busan/@35.0989,129.0302,16z"><strong>南浦洞</strong><span class="sub">第一晚最適合散步吃飯的區域，氣氛很剛好。</span></a>
@@ -503,12 +567,12 @@
         </div>
       </section>
 
-      <section id="day2" class="card">
+      <section id="day2" class="card reveal">
         <span class="section-kicker">Sea & train</span><h2>Day 2 · 5/16（六）海景與列車日</h2>
         <p class="lead">這天以海邊散步、搭列車、看海喝咖啡為主，是整趟最有釜山海景感的一天。</p>
         <div class="meta-row"><span class="meta-pill">體力感：中等</span><span class="meta-pill">主要區域：海雲台 / 青沙浦</span></div>
         <div class="layout">
-          <div class="panel">
+          <div class="panel reveal">
             <h3>今日安排</h3>
             <ol class="flow">
               <li>早上在 <b>海雲台 Haeundae</b> 吃漂亮早午餐。</li>
@@ -518,7 +582,7 @@
               <li>晚上在海雲台吃晚餐，再去 <b>The Bay 101</b> 看夜景。</li>
             </ol>
           </div>
-          <div class="panel">
+          <div class="panel reveal">
             <h3>景點與餐廳</h3>
             <div class="link-list">
               <a class="link-card" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Working+Holiday+Haeundae"><strong>Working Holiday Haeundae</strong><span class="sub">適合海邊早午餐，氣氛比較輕鬆。</span></a>
@@ -536,12 +600,12 @@
         </div>
       </section>
 
-      <section id="day3" class="card">
+      <section id="day3" class="card reveal">
         <span class="section-kicker">Slow walk & coffee</span><h2>Day 3 · 5/17（日）慢步與咖啡日</h2>
         <p class="lead">這天適合慢慢走、拍照、喝咖啡，白淺灘和田浦咖啡街的組合很剛好。</p>
         <div class="meta-row"><span class="meta-pill">體力感：中等偏輕</span><span class="meta-pill">主要區域：白淺灘 / 田浦</span></div>
         <div class="layout">
-          <div class="panel">
+          <div class="panel reveal">
             <h3>今日安排</h3>
             <ol class="flow">
               <li>上午前往 <b>白淺灘文化村 Huinnyeoul Culture Village</b> 看海散步。</li>
@@ -550,7 +614,7 @@
               <li>晚上在西面或田浦附近吃一頓舒服的晚餐。</li>
             </ol>
           </div>
-          <div class="panel">
+          <div class="panel reveal">
             <h3>景點與餐廳</h3>
             <div class="link-list">
               <a class="link-card" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Your+Type+Brunch+Jeonpo"><strong>你的類型早午餐</strong><span class="sub">適合今天慢慢開始，不用趕節奏。</span></a>
@@ -567,12 +631,12 @@
         </div>
       </section>
 
-      <section id="day4" class="card">
+      <section id="day4" class="card reveal">
         <span class="section-kicker">Birthday highlight</span><h2>Day 4 · 5/18（一）生日主日 ✨</h2>
         <p class="lead">今天的主題是氣氛，海景、咖啡、好晚餐和漂亮夜景都集中在這一天。</p>
         <div class="meta-row"><span class="meta-pill">體力感：輕鬆</span><span class="meta-pill">主要區域：廣安里</span></div>
         <div class="layout">
-          <div class="panel">
+          <div class="panel reveal">
             <h3>今日安排</h3>
             <ol class="flow">
               <li>上午到 <b>廣安里海水浴場 Gwangalli Beach</b> 看海散步。</li>
@@ -582,7 +646,7 @@
               <li>晚餐後再去看 <b>廣安大橋 Gwangan Bridge</b> 夜景。</li>
             </ol>
           </div>
-          <div class="panel">
+          <div class="panel reveal">
             <h3>景點與餐廳</h3>
             <div class="link-list">
               <a class="link-card" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Brunch+Cafe+Gwangalli+Busan"><strong>廣安里早午餐</strong><span class="sub">這天不用太早開始，選一間順眼的早午餐店就好。</span></a>
@@ -599,12 +663,12 @@
         </div>
       </section>
 
-      <section id="day5" class="card">
+      <section id="day5" class="card reveal">
         <span class="section-kicker">Departure</span><h2>Day 5 · 5/19（二）回程日</h2>
         <p class="lead">最後一天只要舒服就好，找一間順眼的早餐店，吃完再慢慢去機場。</p>
         <div class="meta-row"><span class="meta-pill">體力感：輕鬆</span><span class="meta-pill">主要區域：飯店周邊 / 機場</span></div>
         <div class="layout">
-          <div class="panel">
+          <div class="panel reveal">
             <h3>今日安排</h3>
             <ol class="flow">
               <li>起床後在飯店附近吃早餐。</li>
@@ -612,7 +676,7 @@
               <li>最後一天不再塞景點，讓旅行收尾得漂亮一點。</li>
             </ol>
           </div>
-          <div class="panel">
+          <div class="panel reveal">
             <h3>早餐建議</h3>
             <div class="link-list">
               <a class="link-card" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Breakfast+Cafe+Seomyeon+Busan"><strong>西面早餐咖啡店</strong><span class="sub">如果住西面，早上吃完直接去機場最順。</span></a>
@@ -622,17 +686,17 @@
         </div>
       </section>
 
-      <section id="stay" class="card">
+      <section id="stay" class="card reveal">
         <span class="section-kicker">Stay</span><h2>住宿建議</h2>
         <p class="lead">第一次去釜山的話，還是最推薦住西面。交通比較平均，行程串起來最省力。</p>
         <div class="layout">
-          <div class="panel">
+          <div class="panel reveal">
             <h3>如果重視交通方便</h3>
             <div class="link-list">
               <a class="link-card" target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/Seomyeon,+Busan/@35.1577,129.0592,16z"><strong>西面 Seomyeon</strong><span class="sub">去海雲台、南浦洞、廣安里都比較平均，是第一次去釜山最穩的選擇。</span></a>
             </div>
           </div>
-          <div class="panel">
+          <div class="panel reveal">
             <h3>如果最想要海景度假感</h3>
             <div class="link-list">
               <a class="link-card" target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/Haeundae+Beach/@35.1587,129.1604,17z"><strong>海雲台 Haeundae</strong><span class="sub">如果你更重視海邊氣氛、度假感和漂亮晨晚景色，住這裡會更有感。</span></a>
@@ -644,5 +708,22 @@
       <p class="footer-note">Busan Birthday Trip Guide · 可直接分享的旅行小手冊 💗</p>
     </div>
   </main>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revealItems.forEach((el) => io.observe(el));
+    } else {
+      revealItems.forEach((el) => el.classList.add('is-visible'));
+    }
+  </script>
 </body>
 </html>
